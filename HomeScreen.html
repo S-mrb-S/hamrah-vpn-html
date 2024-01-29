@@ -58,274 +58,129 @@
       }
     </style>
 
-    <!-- Sidenav -->
-    <link rel="stylesheet" href="style/sidenav/mdb.min.css?v=2.0.1.1" />
-
-    <style type="text/css">
-      :root {
-        --sidenav-color: #666;
+    <!-- sidenav  -->
+    <style>
+      /* The side navigation menu */
+      .sidenav {
+        height: 100%; /* 100% Full-height */
+        width: 0; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0;
+        right: 0; /* Left and right to side */
+        background-color: #111; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
       }
 
-      INPUT:-webkit-autofill,
-      SELECT:-webkit-autofill,
-      TEXTAREA:-webkit-autofill {
-        animation-name: onautofillstart;
+      /* The navigation menu links */
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
       }
 
-      INPUT:not(:-webkit-autofill),
-      SELECT:not(:-webkit-autofill),
-      TEXTAREA:not(:-webkit-autofill) {
-        animation-name: onautofillcancel;
+      /* When you mouse over the navigation links, change their color */
+      .sidenav a:hover {
+        color: #f1f1f1;
       }
 
-      @keyframes onautofillstart {
-        from {
+      /* Position and style the close button (top right corner) */
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+      /* #main {
+        transition: margin-left 0.5s;
+        padding: 20px;
+      } */
+
+      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
         }
-      }
-
-      @keyframes onautofillcancel {
-        from {
+        .sidenav a {
+          font-size: 18px;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Sidenav -->
-    <div
-      id="full-screen-example"
-      class="sidenav sidenav-primary ps ps--active-y"
-      style="
-        width: 240px;
-        height: 100vh;
-        position: fixed;
-        transition: all 0.3s linear 0s;
-        transform: translateX(-100%);
-      "
-    >
-      <!-- <div class="mode"><div>Dark Mode </div></div> -->
-      <div class="mt-4">
-        <div id="header-content" class="pl-3">
-          <img
-            src=""
-            alt="avatar"
-            class="rounded-circle img-fluid mb-3"
-            style="max-width: 50px; filter: drop-shadow(1px 2px 3px #ffffff47)"
-          />
-
-          <h4>name</h4>
-          <p>email</p>
-        </div>
-        <hr class="mb-0" />
-      </div>
-      <div>
-        <ul class="sidenav-menu">
-          <li class="sidenav-item">
-            <a
-              class="sidenav-link ripple-surface"
-              href="/music?user"
-              tabindex="-1"
-            >
-              <i class="fas fa-user pr-3"></i>Profile</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a
-              class="sidenav-link ripple-surface"
-              href="/music?test"
-              tabindex="-1"
-            >
-              <i class="fas fa-envelope pr-3"></i>Inbox</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a
-              class="sidenav-link ripple-surface"
-              href="/music?test"
-              tabindex="-1"
-            >
-              <i class="fas fa-paper-plane pr-3"></i>Outbox</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a
-              class="sidenav-link ripple-surface"
-              href="/music?playlist"
-              tabindex="-1"
-            >
-              <i class="fas fa-list pr-3"></i>Play List</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link ripple-surface" tabindex="-1">
-              <i class="fas fa-heart pr-3"></i>Favourites</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link ripple-surface" tabindex="-1">
-              <i class="fas fa-star pr-3"></i>Starred</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link ripple-surface" tabindex="-1">
-              <i class="fas fa-trash pr-3"></i>Trash</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link ripple-surface" tabindex="-1">
-              <i class="fas fa-ban pr-3"></i>Spam</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a
-              class="sidenav-link ripple-surface"
-              data-toggle="collapse"
-              href="/music#sidenav-collapse-1-0-1"
-              role="button"
-              tabindex="-1"
-              ><i class="fas fa-tag pr-3"></i>Categories<i
-                class="fas fa-angle-down rotate-icon"
-              ></i
-            ></a>
-            <ul class="sidenav-collapse collapse" id="sidenav-collapse-1-0-1">
-              <li class="sidenav-item">
-                <a class="sidenav-link ripple-surface" tabindex="-1">Social</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link ripple-surface" tabindex="-1"
-                  >Notifications</a
-                >
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link ripple-surface" tabindex="-1">Recent</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link ripple-surface" tabindex="-1">Uploads</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link ripple-surface" tabindex="-1">Backups</a>
-              </li>
-              <li class="sidenav-item">
-                <a class="sidenav-link ripple-surface" tabindex="-1">Offers</a>
-              </li>
-            </ul>
-          </li>
-          <li class="sidenav-item">
-            <a
-              class="sidenav-link ripple-surface"
-              href="/music?channel"
-              tabindex="-1"
-              ><i class="fas fa-globe pr-3"></i>Channel</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a
-              class="sidenav-link ripple-surface"
-              href="/music?upload"
-              tabindex="-1"
-            >
-              <i class="fas fa-upload pr-3"></i>Upload</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a
-              class="sidenav-link ripple-surface"
-              href="/music?theme"
-              tabindex="-1"
-            >
-              <i class="fas fa-fill-drip pr-3"></i>Theme</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link ripple-surface" tabindex="-1">
-              <i class="fas fa-ellipsis-h pr-3"></i>More</a
-            >
-          </li>
-        </ul>
-        <hr class="m-0" />
-        <ul class="sidenav-menu">
-          <!-- <li class="sidenav-item">
-          <a class="sidenav-link ripple-surface" tabindex="-1"> <i class="fas fa-cogs pr-3"></i>Settings</a>
-        </li> -->
-          <li class="sidenav-item">
-            <a
-              class="sidenav-link ripple-surface"
-              href="/music?language"
-              tabindex="-1"
-            >
-              <i class="fas fa-language pr-3"></i>Language</a
-            >
-          </li>
-          <li class="sidenav-item">
-            <a class="sidenav-link ripple-surface" tabindex="-1">
-              <i class="fas fa-shield-alt pr-3"></i>Privacy</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="text-center" style="height: 100px">
-        <hr class="mb-4 mt-0" />
-        <p>MEHRAB</p>
-      </div>
-      <div class="ps__rail-x" style="left: 0px; bottom: 0px">
-        <div
-          class="ps__thumb-x"
-          tabindex="0"
-          style="left: 0px; width: 0px"
-        ></div>
-      </div>
-      <div class="ps__rail-y" style="top: 0px; height: 695px; right: 0px">
-        <div
-          class="ps__thumb-y"
-          tabindex="0"
-          style="top: 0px; height: 425px"
-        ></div>
-      </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
     </div>
-    <!-- Sidenav -->
 
-    <!-- Navbar brand -->
-    <a
-      class="dropdown-toggle d-flex align-items-center hidden-arrow"
-      style="color: inherit; cursor: pointer"
-      id="toggler"
-      data-toggle="sidenav"
-      y=""
-      data-target="#full-screen-example"
-      aria-expanded="false"
-    >
-      <i class="fas fa-bars fa-lg"></i>
-    </a>
+    <div id="main">
+      <div style="position: absolute; right: 20px; top: 30px; color: #818181">
+        <!-- Use any element to open the sidenav -->
+        <a onclick="openNav()">
+          <svg viewBox="0 0 100 80" width="28" height="28">
+            <rect fill="steelblue" width="90" height="13" rx="10"></rect>
+            <rect
+              fill="steelblue"
+              y="30"
+              width="90"
+              height="13"
+              rx="10"
+            ></rect>
+            <rect
+              fill="steelblue"
+              y="60"
+              width="90"
+              height="13"
+              rx="10"
+            ></rect>
+          </svg>
+        </a>
+      </div>
 
-    <div class="login-screen login-box">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 contents">
-            <div class="row justify-content-center">
-              <div class="col-md-8">
-                <!--  -->
+      <div class="login-screen login-box">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 contents">
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <h5>Hello</h5>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Font Awesome -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
 
-    <!-- PRISM -->
-    <link rel="stylesheet" href="style/sidenav/new-prism.css" />
-    <script src="style/sidenav/clipboard.min.js"></script>
-    <!-- PRISM -->
-    <script type="text/javascript" src="style/sidenav/new-prism.js"></script>
-    <!-- MDB SNIPPET -->
-    <script
-      type="text/javascript"
-      src="style/sidenav/mdbsnippet.min.js"
-    ></script>
-    <!-- MDB -->
-    <script type="text/javascript" src="style/sidenav/mdb.min.js"></script>
+    <script>
+      /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        // document.getElementById("main").style.marginLeft = "250px";
+        // document.body.style.backgroundColor
+        document.getElementById("main").style.backgroundColor =
+          "rgba(0,0,0,0.4)";
+      }
+
+      /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        // document.getElementById("main").style.marginLeft = "0";
+        document.getElementById("main").style.backgroundColor = "";
+      }
+    </script>
   </body>
 </html>
